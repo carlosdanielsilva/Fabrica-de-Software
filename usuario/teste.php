@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
     <meta charset="utf-8">
-	<title>Dashboard</title>
+	<title>Teste</title>
     
   </head>
   <body>
@@ -61,8 +61,10 @@
 <h1>DASHBOARD DE ACOMPANHAMENTO</h1>
 
 <p>Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
+        
+<div class="grafico">
 
-
+	
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" id="grafico-teste">
       google.charts.load('current', {'packages':['corechart']});
@@ -85,7 +87,6 @@
 
            
           ['<?php echo $data ?>', <?php echo $glicemia ?>],
-          
           <?php } ?>
         ]);
 
@@ -104,6 +105,10 @@
       }
     </script>
     <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+</div>
+
+
 
   </body>
 </html>

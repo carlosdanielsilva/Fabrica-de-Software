@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Mar-2022 às 03:59
+-- Tempo de geração: 11-Mar-2022 às 23:22
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `monitoramento` (
   `id` int(11) NOT NULL,
+  `data` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `glicemia` float NOT NULL,
   `cafe` varchar(200) NOT NULL,
   `almoco` varchar(200) NOT NULL,
@@ -43,16 +44,9 @@ CREATE TABLE `monitoramento` (
 -- Extraindo dados da tabela `monitoramento`
 --
 
-INSERT INTO `monitoramento` (`id`, `glicemia`, `cafe`, `almoco`, `lanche`, `janta`, `exercicio`, `agua`, `peso`) VALUES
-(2, 2, 'a', 'a', 'a', 'a', 'a', 2, 2),
-(18, 2222, 'sua mãe', 'sua tia', 'sua avó', 'sua irmã', 'comer a sua mãe', 22, 22),
-(19, 0, '', '', '', '', '', 0, 0),
-(20, 0, '', '', '', '', '', 0, 0),
-(21, 0, '', '', '', '', '', 0, 0),
-(22, 22, 'aa', 'aa', 'aaa', 'aa', 'aa', 22, 22),
-(23, 22, 'aa', 'aa', 'aa', 'aa', 'aa', 22, 22),
-(24, 22, 'aa', 'aa', 'aa', 'aa', 'aa', 22, 22),
-(25, 22, 'aa', 'aaaa', 'aaa', 'aaa', 'aaaa', 22, 22);
+INSERT INTO `monitoramento` (`id`, `data`, `glicemia`, `cafe`, `almoco`, `lanche`, `janta`, `exercicio`, `agua`, `peso`) VALUES
+(27, '2022-03-11 18:17:32', 150, 'café, pão e omelete', 'nao', 'nao', 'nao', 'caminhada', 500, 56),
+(28, '2022-03-11 18:17:32', 152, 'omelete', 'macarrão', 'não', 'salada', 'caminhada', 1500, 58);
 
 -- --------------------------------------------------------
 
@@ -76,7 +70,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nome`, `nickname`, `email`, `data_nascimento`, `senha`, `tipo_diabete`, `ativo`) VALUES
-(1, 'Administrador', 'admin', 'admin@admin', '0000-00-00 00:00:00', 21232, 2, 1);
+(1, 'Administrador', 'admin', 'admin@admin', '0000-00-00 00:00:00', 21232, 2, 1),
+(2, 'Jake', 'jake', 'jake@teste.com', '1990-03-10 22:51:15', 25000, 0, 0);
 
 --
 -- Índices para tabelas despejadas
@@ -102,13 +97,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `monitoramento`
 --
 ALTER TABLE `monitoramento`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
