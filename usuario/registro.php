@@ -46,6 +46,8 @@
     <ul class="nav navbar-nav">
 		<li><a href="inicio.php">INÍCIO</a></li>
 		<li class="active"><a href="registro.php">MINHA SAÚDE</a></li>
+		<li><a href="dashboard.php">DASHBOARD</a></li>
+
 		  </ul>
 		 <ul class="nav navbar-nav navbar-right" >
 		  <li><a href="" onclick="sair()"><i class="fa fa-sign-out" ></i>Sair</a></li>
@@ -55,6 +57,10 @@
 </nav>
 
 		<h1> MINHA SAÚDE </h1>
+
+		<p>Nessa área você pode acompanhar todos os registros de dados adicionados, registrar novas informações e excluir informações desejadas. </p>
+
+		<p>As informações possíveis de adicionar são: Valor medido da Glicemia, Registros das alimentações do dia, Realização de Exercícios, Quantidade de água e Peso.</p>
 		<?php
 
 			if (isset($_GET['confirm']))

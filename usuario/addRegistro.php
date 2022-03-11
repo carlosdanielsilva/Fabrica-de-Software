@@ -33,7 +33,7 @@
 				Lanche: <input type="text" name="lanche" maxlength="200" autocomplete="off" required><br><br>
 				Janta: <input type="text" name="janta" maxlength="200" autocomplete="off" required><br><br>
 				Exercicio: <input type="text" name="exercicio" maxlength="300" autocomplete="off" required><br><br>
-				Água: <input type="number" name="agua" min='1' max='9999' step='1' autocomplete='off' required><br><br>
+				Água (ml): <input type="number" name="agua" min='1' max='9999' step='1' autocomplete='off' required><br><br>
 				Peso: <input type="number" name="peso" min='1' max='9999' step='1' autocomplete='off' required><br><br>
 				<input type="submit" value="Confirmar">
 				<input type="button" value="Apagar" onclick="if(confirm('Deseja realmente apagar estes dados?')){document.getElementById('info').reset();};">
