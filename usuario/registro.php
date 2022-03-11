@@ -44,9 +44,8 @@
     </div>
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-		<li><a href="inicio.php">INÍCIO</a></li>
-		<li class="active"><a href="registro.php">MINHA SAÚDE</a></li>
 		<li><a href="dashboard.php">DASHBOARD</a></li>
+		<li class="active"><a href="registro.php">MINHA SAÚDE</a></li>
 
 		  </ul>
 		 <ul class="nav navbar-nav navbar-right" >
@@ -86,10 +85,11 @@
 
 			if (isset($_GET['apagar']))
 			{
-				echo "<h3>Excluir produtos</h3>";
+				echo "<h3>Excluir registros</h3>";
 				echo "<form id='apagar' action='registro.php'>";
 				echo "<table>";
 				echo "<tr>".
+						"<td style='background-color:lightblue;'><b>Data</b></td>".
 						"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
 						"<td style='background-color:lightblue;'><b>Cafe</b></td>".
 						"<td style='background-color:lightblue;'><b>Almoço</b></td>".
@@ -104,6 +104,7 @@
 				while($linha = mysqli_fetch_assoc($query))
 				{
 					echo "<tr>".
+							"<td>".$linha['data']."</td>".
 							"<td>".$linha['glicemia']."</td>".
 							"<td>".$linha['cafe']."</td>".
 							"<td>".$linha['almoco']."</td>".
@@ -143,6 +144,7 @@
 			{
 				echo "<table>";
 				echo "<tr>".
+							"<td style='background-color:lightblue;'><b>Data</b></td>".
 							"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
 							"<td style='background-color:lightblue;'><b>Cafe</b></td>".
 							"<td style='background-color:lightblue;'><b>Almoço</b></td>".
@@ -156,6 +158,7 @@
 				while($linha = mysqli_fetch_assoc($query))
 				{
 					echo "<tr>".
+							"<td>".$linha['data']."</td>".
 							"<td>".$linha['glicemia']."</td>".
 							"<td>".$linha['cafe']."</td>".
 							"<td>".$linha['almoco']."</td>".
@@ -170,7 +173,7 @@
 				echo "</table><br>";
 				echo "<button class='button' onclick=\"window.location='addRegistro.php';\">Adicionar Registros</button>
 					  <button class='button' onclick=\"window.location='registro.php?apagar=yes';\">Excluir Registros</button>
-					  <button class='button' onclick=\"window.location='inicio.php';\">Voltar</button>";
+					  <button class='button' onclick=\"window.location='dashboard.php';\">Voltar</button>";
 			}
 
 			mysqli_close($conexao);

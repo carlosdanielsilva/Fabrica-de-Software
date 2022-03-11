@@ -27,7 +27,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="apexcharts.min.js"></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script></script>
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="estilo.css">
 	<meta charset="utf-8">
@@ -45,9 +47,8 @@
     </div>
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-		<li><a href="inicio.php">INÍCIO</a></li>
+		<li class="active"><a href="dashboard.php">DASHBOARD</a></li>
 		<li><a href="registro.php">MINHA SAÚDE</a></li>
-        <li class="active"><a href="dashboard.php">DASHBOARD</a></li>
 
 		  </ul>
 		 <ul class="nav navbar-nav navbar-right" >
@@ -62,6 +63,9 @@
 <p>Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
 
 <div id="grafico-glicemia"></div>
+
+
+
         
 <?php
 
@@ -89,17 +93,16 @@
 			
 				echo "<table>";
 				echo "<tr>".
-                "<td style='background-color:lightblue;'><b>Data</b></td>".
-
-							"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
+               			"<td style='background-color:lightblue;'><b>Data</b></td>".
+						"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
 
 					 "</tr>";
 
 				while($linha = mysqli_fetch_assoc($query))
 				{
 					echo "<tr>".
-                             "<td></td>".
-							"<td>".$linha['glicemia']."</td>".
+					"<td>".$linha['data']."</td>".
+					"<td>".$linha['glicemia']."</td>".
 						 "</tr>";
 				}
 

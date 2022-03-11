@@ -31,6 +31,13 @@
 			<div id="caps" style="visibility:hidden" class="texto">Caps Lock Ativado!</div><br></p>
 			<button class="button1" type="submit"><span style="font-size:85%;">Confirmar</span></button><br><br>
 		</form>
+
+		<div class="login-redes">
+		<button class="button-fb" type="button"><span style="font-size:85%;">Logar com Facebook</span></button><br><br>
+		<button class="button-google" type="button"><span style="font-size:85%;">Logar com Google</span></button><br><br>
+
+		</div>
+
 	</header>
 	</div>
 	</div>
@@ -81,7 +88,7 @@
 				
 			if ($linha['ativo'] == 1)
 			{
-					header("location:../usuario/inicio.php");
+					header("location:../usuario/dashboard.php");
 			}
 			elseif ($linha['ativo'] == 0)
 			{
