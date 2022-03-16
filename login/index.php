@@ -14,36 +14,52 @@
 		}
 	</script>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="loginnn.css">
+	<link rel="stylesheet" type="text/css" href="login.css">
 	<title>Login</title>
 </head>
+
 <body>
 
+	<div class="logo">
+			
+	</div>
+
+
 	<div class="container">
-    <header>
+    
 		<p class = "titulo">Login</p>
-		<div align="center" class="transparent">
 	
 		<br>
 		<form name="login" method="POST" action="index.php" >
-			<p class="texto" ><label for="nickname"> Nickname:</label> <input type="text" name="nickname" autocomplete="off" maxlength="12" required><br><br>
-			<label for="password">Senha:</label> <input type="password" name="senha" id ="senha" onkeypress="capsLock(event)" maxlength="12" required><br>
+			<div class="campo-login">
+				<span class="texto-login" ><label for="nickname"> login:</label><br> <input type="text" name="nickname" autocomplete="off" maxlength="12" required>
+			</div>
+			<br>
+			<div class="campo-senha">
+				<label for="password">senha:</label><br> <input type="password" name="senha" id ="senha" onkeypress="capsLock(event)" maxlength="12" required><br>
+			</div>
 			<div id="caps" style="visibility:hidden" class="texto">Caps Lock Ativado!</div><br></p>
-			<button class="button1" type="submit"><span style="font-size:85%;">Confirmar</span></button><br><br>
+			<button class="button1" type="submit"><span style="font-size:85%;">Entrar</span></button><br><br>
 		</form>
 
 		<div class="login-redes">
+
 		<button class="button-fb" type="button"><span style="font-size:85%;">Logar com Facebook</span></button><br><br>
 		<button class="button-google" type="button"><span style="font-size:85%;">Logar com Google</span></button><br><br>
 
 		</div>
+	</div>
 
-	</header>
+
+	<div class="rodape">
+		<p class="direitos">@copyright todos os direitor reservados</p>
+		<p>designed by TECHUMAN</p>
 	</div>
-	</div>
+
 
 </body>
 </html>
+
 <?php
 	include_once('conexao.php');
 
