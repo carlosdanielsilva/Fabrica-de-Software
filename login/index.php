@@ -26,23 +26,26 @@
 
 
 	<div class="container">
-    
+		
 		<p class = "titulo">Login</p>
 	
 		<br>
-		<form name="login" method="POST" action="index.php" >
+		<form name="login" method="POST" action="index.php" class="login-dados" >
 			<div class="campo-login">
-				<span class="texto-login" ><label for="nickname"> login:</label><br> <input type="text" name="nickname" autocomplete="off" maxlength="12" required>
+				<span class="texto-login" ><label for="nickname"> login:</label><br> <input type="text" name="nickname" placeholder="username@email.com" autocomplete="off" maxlength="12" required>
 			</div>
 			<br>
 			<div class="campo-senha">
-				<label for="password">senha:</label><br> <input type="password" name="senha" id ="senha" onkeypress="capsLock(event)" maxlength="12" required><br>
+				<label for="password">senha:</label><br> <input type="password" placeholder="password" name="senha" id ="senha" onkeypress="capsLock(event)" maxlength="12" required><br>
 			</div>
 			<div id="caps" style="visibility:hidden" class="texto">Caps Lock Ativado!</div><br></p>
-			<button class="button1" type="submit"><span style="font-size:85%;">Entrar</span></button><br><br>
+			<button class="entrar" type="submit"><span style="font-size:85%;">entrar</span></button><br><br>
 		</form>
 
+		<span class="entre-com">ou entre com</span>
+
 		<div class="login-redes">
+
 
 		<button class="button-fb" type="button"><span style="font-size:85%;">Logar com Facebook</span></button><br><br>
 		<button class="button-google" type="button"><span style="font-size:85%;">Logar com Google</span></button><br><br>
