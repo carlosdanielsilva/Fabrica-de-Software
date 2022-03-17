@@ -59,13 +59,25 @@
 		$conexao = mysqli_connect('localhost', 'root', '', 'glic');
 
 		if(mysqli_query($conexao, $query)){
-			echo "<script>
-							alert('Deu bom!');
+			if($glicemia < 70) {
+				echo "<script>
+							alert('ALERTA! Sua glicose está inferior a taxa miníma aceitável, que é de 70mg/dl');
 							window.location='registro.php';
 					  </script>";
+			} else if ($glicemia > 125){
+				echo "<script>
+							alert('ALERTA! Sua glicose está superior a taxa máxima aceitável, que é de 125mg/dl');
+							window.location='registro.php';
+					  </script>";
+			} else {
+				echo "<script>
+							alert('Sua glicose está normal.');
+							window.location='registro.php';
+					  </script>";
+			}	
 		} else{
 			echo "<script>
-							alert('Deu ruim!');
+							alert('Erro ao cadastrar no sistema.');
 							window.location='registro.php';
 					  </script>";
 		}
