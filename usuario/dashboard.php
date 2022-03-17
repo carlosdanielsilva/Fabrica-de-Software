@@ -11,98 +11,128 @@
 ?>
 
 <html>
-  <head>
+	<head>
 
-    <script type="text/javascript">
-      function sair()
-        {
-        if (confirm("Deseja realmente sair?"))
-        {
-          setTimeout(function() {
-              window.location.href = "../login/logout.php?destroy=yes";
-          }, 1);
-        }
-      }
-    </script>
+		<script type="text/javascript">
+			function sair()
+				{
+				if (confirm("Deseja realmente sair?"))
+				{
+				setTimeout(function() {
+					window.location.href = "../login/logout.php?destroy=yes";
+				}, 1);
+				}
+			}
+		</script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="estilo-dash.css">
-    <meta charset="utf-8">
-    <title>Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+		<link rel="stylesheet" type="text/css" href="estilo-dash.css">
+		<meta charset="utf-8">
+		<title>Dashboard</title>
     
-  </head>
+	</head>
 
-  <body>
-    <div class="logo"></div>
+	<body>
+		
+		<div class="logo">
+			<img src="img/Logo_GLIC_branco.png" width="232px">
+		</div>
 
-    <div style="margin-top: 100px;" class="all">
-      <div class="container">
-        <nav class="navbar">
-          <div class="navbar-inner">
-            <div class="profile-picture">
-              <!--pegar imagem cadastrada no perfil-->
-            </div>
-            <div class="navbar-user-dados">
-              <p class="navbar-name">Usuario</p> <br> <!--pegar nome cadastrado no perfil-->
-              <p class="navbar-username">@username</p> <!--pegar username cadastrado no perfil-->
-            </div>
-            <ul class="navbar-list">
-              <li class="active"><a href="dashboard.php">DASHBOARD</a></li>
-              <li><a href="registro.php">MINHA SAÚDE</a></li>
-            </ul>
-            <ul class="navbar-sair" >
-              <li><a href="" onclick="sair()"><i class="fa fa-sign-out" ></i>Sair</a></li>
-            </ul>
-          </div>
-        </nav>
+		<div style="margin-top: 100px;" class="all">
+			<div class="container">
+				<nav class="navbar">
+					<div class="navbar-inner">
+						<div class="profile-picture">
+							<!--pegar imagem cadastrada no perfil-->
+						</div>
+						<div class="navbar-user-dados">
+							<p class="navbar-name">Usuario</p> <br> <!--pegar nome cadastrado no perfil-->
+							<p class="navbar-username">@username</p> <!--pegar username cadastrado no perfil-->
+						</div>
+						<div class="navbar-list">
+							<ul>
+								<a href="dashboard.php"><li class="list-item" id="menu-item1">DASHBOARD</li></a>
+								<a href="dashboard.php"><li class="list-item" id="menu-item2">PERFIL</li></a>
+								<a href="registro.php"><li class="list-item" id="menu-item3">MINHA SAÚDE</li></a>
+								<a href="registro.php"><li class="list-item" id="menu-item4">MURAL</li></a>
+							</ul>
+						</div>
+						<div class="navbar-sair">
+							<a href="" onclick="sair()"><li class="button-sign-out">SAIR</li></a>
+						</div>
+					</div>
+				</nav>
 
-        <h1>DASHBOARD DE ACOMPANHAMENTO</h1>
+				<div class="container-tela">
+					
+					<div class="cabecalho-container">
+						<h1 class="titulo-page">Dashboard</h1>
+						<p class="descricao-dash">Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
+					</div>
+					
+					<div class="container-grafico">
+						<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+						<script type="text/javascript" id="grafico-teste">
+						google.charts.load('current', {'packages':['corechart']});
+						google.charts.setOnLoadCallback(drawChart);
 
-        <p>Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
+						function drawChart() {
+							var data = google.visualization.arrayToDataTable([
+							['Data', 'Glicemia'],
+							
+							<?php
 
-        <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" id="grafico-teste">
-          google.charts.load('current', {'packages':['corechart']});
-          google.charts.setOnLoadCallback(drawChart);
+								$sql = "SELECT * FROM monitoramento";
+								$buscar = mysqli_query($conexao, $sql);
 
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Data', 'Glicemia'],
-              
-              <?php
+								while ($dados = mysqli_fetch_array($buscar)){
+								$data = $dados['data'];
+								$glicemia = $dados['glicemia'];
+									
+							?>
+							
+							['<?php echo $data ?>', <?php echo $glicemia ?>],
+							
+							<?php } ?>
+							]);
 
-            $sql = "SELECT * FROM monitoramento";
-            $buscar = mysqli_query($conexao, $sql);
+							var options = {
+								title: 'Monitoramento da Glicemia',
+								curveType: 'function',
+								legend: { position: 'bottom' },
+								width:1000,
+								height:800,
 
-            while ($dados = mysqli_fetch_array($buscar)){
-              $data = $dados['data'];
-              $glicemia = $dados['glicemia'];
-                    
-          ?>
-              
-              ['<?php echo $data ?>', <?php echo $glicemia ?>],
-              
-              <?php } ?>
-            ]);
+							};
 
-            var options = {
-                title: 'Monitoramento da Glicemia',
-                curveType: 'function',
-                legend: { position: 'bottom' },
-                width:1000,
-                height:800,
+							var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-            };
+							chart.draw(data, options);
+						}
+						</script>
+						<div id="curve_chart" style="width: 900px; height: 500px;"></div>
+					</div>
+					
+					<div class="container-propensao"></div>
 
-            var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+					<div class="botoes-grafico">
+						
+					</div>
+				</div>
 
-            chart.draw(data, options);
-          }
-        </script> -->
-        <div id="curve_chart" style="width: 900px; height: 500px"></div>
-      </div>
-    </div>
-  </body>
+				<div class="rodape">
+					<div class="icones">
+						<img src="img/facebook-branco.png" width="27px">
+						<img src="img/instagram-branco.png" width="27px">
+						<img src="img/linkedin-branco.png" width="27px">
+					</div>
+
+					<p class="direitos">@copyright todos os direitor reservados</p>
+					<p>designed by TECHUMAN</p>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
