@@ -1,29 +1,80 @@
 body{
-    background-color: #7CC9F2;
+    margin: 0;
+    padding: 0;
+}
+
+.bg{
+    margin: 0;
+    padding: 0;
     width: 1920px;
     height: 1123px;
+}
+
+.logo{
+    position: absolute;
+    top: 29px;
+    left: 844px;
 }
 
 .titulo{
     position: absolute;
     width: 238px;
+    height: 39px;
     top: 67px;
     left: 338px;
-    background-color: #0871BD;
+    background-color: #57AEDE;
     color: #fff;
     border-radius: 5px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
-    /* identical to box height */
-
     display: flex;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
     letter-spacing: -0.02em;
+
+    padding: 0 5px;
+}
+
+.titulo p{
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.titulo-login{   
+    width: 108px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+
+
+.titulo-cadastro{
+    width: 108px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+
+}
+
+
+.titulo p:hover{
+    background-color: #0871BD;
+    width: 108.8px;
+    border-radius: 5px;
 }
 
 .login-dados{
@@ -125,8 +176,6 @@ rgba(255, 255, 255, 0.5);
     line-height: 14px;
     text-align: center;
     letter-spacing: -0.02em;
-
-
 }
 
 .login-redes{
@@ -136,6 +185,20 @@ rgba(255, 255, 255, 0.5);
     bottom: 82px;
     display: flex;
     justify-content: space-around;
+}
+
+.button-google{
+    width: 120px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.button-fb{
+    width: 120px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
 }
 
 .rodape{
@@ -158,4 +221,10 @@ rgba(255, 255, 255, 0.5);
     letter-spacing: -0.02em;
 }
 
-
+.icones{
+    width: 113.19px;
+    position: relative;
+    left: 131px;
+    display: flex;
+    justify-content: space-between;
+}

@@ -15,20 +15,32 @@
 	</script>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 	<title>Login</title>
 </head>
 
 <body>
 
+	<div class="background">
+		<img src="img/bg.png">
+
+	</div>
+
 	<div class="logo">
-			
+			<img src="img/Logo_GLIC_branco.png" width="232px">
 	</div>
 
 
 	<div class="container">
 		
-		<p class = "titulo">Login</p>
-	
+	<div class="titulo">
+		<p class = "titulo-login">login</p>
+		<p class = "titulo-cadastro">cadastre-se</p>
+	</div>
+
+
 		<br>
 		<form name="login" method="POST" action="index.php" class="login-dados" >
 			<div class="campo-login">
@@ -46,15 +58,20 @@
 
 		<div class="login-redes">
 
-
-		<button class="button-fb" type="button"><span style="font-size:85%;">Logar com Facebook</span></button><br><br>
-		<button class="button-google" type="button"><span style="font-size:85%;">Logar com Google</span></button><br><br>
+		<button class="button-google" type="button"><img src="img/logo-google.png" width="19px"></button><br><br>
+		<button class="button-fb" type="button"><img src="img/logo-fb.png" width="19px"></button><br><br>
 
 		</div>
 	</div>
 
 
 	<div class="rodape">
+		<div class="icones">
+				<img src="img/facebook-branco.png" width="27px">
+				<img src="img/instagram-branco.png" width="27px">
+				<img src="img/linkedin-branco.png" width="27px">
+		</div>
+
 		<p class="direitos">@copyright todos os direitor reservados</p>
 		<p>designed by TECHUMAN</p>
 	</div>
