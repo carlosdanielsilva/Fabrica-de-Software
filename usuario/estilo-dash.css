@@ -1,0 +1,83 @@
+body{
+    background-color: #7CC9F2;
+    font-family: 'Roboto';
+}
+
+.container{
+    position: absolute;
+    width: 85%;
+    height: 800px;
+    align-items: center;
+    left: 8%;
+    top: 100px;
+    filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    backdrop-filter: blur(100px);
+    border: 5px solid;
+    border-radius: 30px;
+    border-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0.5);
+}
+
+.navbar{
+    position: absolute;
+    width: 304px;
+    height: 800px;
+    align-items: center;
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    backdrop-filter: blur(100px);
+    border-radius: 25px 0 0 25px;
+    /* border: 5px solid;
+    border-color: rgba(255, 255, 255, 1) rgba(255, 255, 255, 0.5);*/
+}
+
+.navbar-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-picture{
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: 50px;
+    background: #7CC9F2;
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+}
+
+.navbar-user-dados{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+}
+
+.navbar-name{
+    position: absolute;
+    font-weight: 1000;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0871BD;
+}
+
+.navbar-username{
+    position: absolute;
+    top: 20px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #55b8ff;
+}
+
+.navbar-list{
+    position: absolute;
+    top: 300px;
+}
