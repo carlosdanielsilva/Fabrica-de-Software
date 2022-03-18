@@ -99,30 +99,29 @@
 								
 								<?php
 
+
 									$sql = "SELECT * FROM monitoramento";
 									$buscar = mysqli_query($conexao, $sql);
 
 									while ($dados = mysqli_fetch_array($buscar)){
 									$data = $dados['data'];
 									$glicemia = $dados['glicemia'];
-										
+
 								?>
 								
-								['<?php echo $data ?>', <?php echo $glicemia ?>],
+								['<?php echo (strftime("%a", strtotime($data))) ?>', <?php echo $glicemia ?>],
 								
 								<?php } ?>
 								]);
 
 								var options = {
-									title: 'Monitoramento da Glicemia',
-									curveType: 'function',
-									legend: { position: 'bottom' },
+									legend: { position: 'none' },
 									width:500,
 									height:350,
-									
+									backgroundColor: 'transparent',
 								};
 
-								var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+								var chart = new google.visualization.ColumnChart(document.getElementById('curve_chart'));
 
 								chart.draw(data, options);
 							}
