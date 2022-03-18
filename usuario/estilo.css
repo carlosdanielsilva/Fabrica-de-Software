@@ -187,12 +187,6 @@ div.form {
 }
 
 
-#grafico-teste {
+.listagem-registro{
 border: 1px solid red;
-width: 200px;
-height: 200px;
-position: absolute;
-z-index: 1;
-align-items: center;
 }
-
