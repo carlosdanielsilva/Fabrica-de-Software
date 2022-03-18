@@ -71,48 +71,64 @@
 						<h1 class="titulo-page">Dashboard</h1>
 						<p class="descricao-dash">Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
 					</div>
-					
-					<div class="container-grafico">
-						<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-						<script type="text/javascript" id="grafico-teste">
-						google.charts.load('current', {'packages':['corechart']});
-						google.charts.setOnLoadCallback(drawChart);
 
-						function drawChart() {
-							var data = google.visualization.arrayToDataTable([
-							['Data', 'Glicemia'],
-							
-							<?php
+					<div class="container-glicemia">
+						<div class="container-glicemia-valor">
+							<div class="glicemia-icone">
+								<img src="img/icone_medidor.png" class="icone-medidor" style="width: 70px; height: 70px;">
+							</div>
+							<div class="glicemia-valor">
+								<p class="valor">XX</p> <!-- puxar ultimo registro do BD -->
+								<p class="medida">mg/dL</p>
+							</div>
+							<div class="glicemia-legendas">
+								<p class="legenda-titulo">GLICEMIA</p>
+								<p class="legenda-subtitulo">(valor atual)</p>
+							</div>
+						</div>
+						
+						<div class="container-grafico">
+							<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+							<script type="text/javascript" id="grafico-teste">
+							google.charts.load('current', {'packages':['corechart']});
+							google.charts.setOnLoadCallback(drawChart);
 
-								$sql = "SELECT * FROM monitoramento";
-								$buscar = mysqli_query($conexao, $sql);
+							function drawChart() {
+								var data = google.visualization.arrayToDataTable([
+								['Data', 'Glicemia'],
+								
+								<?php
 
-								while ($dados = mysqli_fetch_array($buscar)){
-								$data = $dados['data'];
-								$glicemia = $dados['glicemia'];
+									$sql = "SELECT * FROM monitoramento";
+									$buscar = mysqli_query($conexao, $sql);
+
+									while ($dados = mysqli_fetch_array($buscar)){
+									$data = $dados['data'];
+									$glicemia = $dados['glicemia'];
+										
+								?>
+								
+								['<?php echo $data ?>', <?php echo $glicemia ?>],
+								
+								<?php } ?>
+								]);
+
+								var options = {
+									title: 'Monitoramento da Glicemia',
+									curveType: 'function',
+									legend: { position: 'bottom' },
+									width:500,
+									height:350,
 									
-							?>
-							
-							['<?php echo $data ?>', <?php echo $glicemia ?>],
-							
-							<?php } ?>
-							]);
+								};
 
-							var options = {
-								title: 'Monitoramento da Glicemia',
-								curveType: 'function',
-								legend: { position: 'bottom' },
-								width:1000,
-								height:800,
+								var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
-							};
-
-							var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-							chart.draw(data, options);
-						}
-						</script>
-						<div id="curve_chart" style="width: 900px; height: 500px;"></div>
+								chart.draw(data, options);
+							}
+							</script>
+							<div id="curve_chart" style="width: 900px; height: 500px;"></div>
+						</div>
 					</div>
 					
 					<div class="container-propensao"></div>
