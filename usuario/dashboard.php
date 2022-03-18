@@ -29,6 +29,9 @@
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
 		<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 		<link rel="stylesheet" type="text/css" href="estilo-dash.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 		<meta charset="utf-8">
 		<title>Dashboard</title>
     
@@ -77,8 +80,20 @@
 							<div class="glicemia-icone">
 								<img src="img/icone_medidor.png" class="icone-medidor" style="width: 70px; height: 70px;">
 							</div>
+							<?php
+
+
+								$sql = "SELECT * FROM monitoramento";
+								$buscar = mysqli_query($conexao, $sql);
+
+								while ($dados = mysqli_fetch_array($buscar)){
+								$data = $dados['data'];
+								$glicemia = $dados['glicemia'];
+								}
+								?>
+
 							<div class="glicemia-valor">
-								<p class="valor">XX</p> <!-- puxar ultimo registro do BD -->
+								<p class="valor"><?php echo $glicemia ?></p> <!-- puxar ultimo registro do BD -->
 								<p class="medida">mg/dL</p>
 							</div>
 							<div class="glicemia-legendas">
