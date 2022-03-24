@@ -28,221 +28,194 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" type="text/css" href="estilo-registro.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<title>Minha Saúde</title>
 
 </head>
 <body>
-	<div align="center" style="margin-top: 100px;">
-	
-	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-    </div>
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-		<li><a href="dashboard.php">DASHBOARD</a></li>
-		<li class="active"><a href="registro.php">MINHA SAÚDE</a></li>
 
-		  </ul>
-		 <ul class="nav navbar-nav navbar-right" >
-		  <li><a href="" onclick="sair()"><i class="fa fa-sign-out" ></i>Sair</a></li>
-		 </ul>
-    </div>
-  </div>
-</nav>
+	<div class="logo">
+			<img src="img/Logo_GLIC_branco.png" width="232px">
+	</div>
 
-		<h1> MINHA SAÚDE </h1>
+		<div style="margin-top: 100px;" class="all">
+			<div class="container">
+				<nav class="navbar">
+					<div class="navbar-inner">
+						<div class="profile-picture">
+							<!--pegar imagem cadastrada no perfil-->
+						</div>
+						<div class="navbar-user-dados">
+							<p class="navbar-name">Usuario</p> <br> <!--pegar nome cadastrado no perfil-->
+							<p class="navbar-username">@username</p> <!--pegar username cadastrado no perfil-->
+						</div>
+						<div class="navbar-list">
+							<ul>
+								<a href="dashboard.php"><li class="list-item" id="menu-item1">DASHBOARD</li></a>
+								<a href="dashboard.php"><li class="list-item" id="menu-item2">PERFIL</li></a>
+								<a href="registro.php"><li class="list-item" id="menu-item3">MINHA SAÚDE</li></a>
+								<a href="registro.php"><li class="list-item" id="menu-item4">MURAL</li></a>
+							</ul>
+						</div>
+						<div class="navbar-sair">
+							<a href="" onclick="sair()"><li class="button-sign-out">SAIR</li></a>
+						</div>
+					</div>
+				</nav>
 
-		<p>Nessa área você pode acompanhar todos os registros de dados adicionados, registrar novas informações e excluir informações desejadas. </p>
+				<div class="container-tela">	
 
-		<p>As informações possíveis de adicionar são: Valor medido da Glicemia, Registros das alimentações do dia, Realização de Exercícios, Quantidade de água e Peso.</p>
-		<?php
+					<h1 class="titulo"> Minha Saúde </h1>
 
-		echo "<form action='registro.php'>";
-		echo "<input type='text' placeholder='Insira a data que deseja buscar' name='valor' maxlenght='15' autocomplete='off' required><br><br>";
-		echo "<input type='submit' name='buscar' value='Buscar'>";
-		echo "<input type='button'  onclick=\"window.location='registro.php';\" value='Apagar filtro'>";
-		echo "</form>";
 
-			if (isset($_GET['confirm']))
-			{
-				$string = "SELECT id FROM monitoramento ORDER BY id";
-				$query = mysqli_query($conexao, $string);
-				$i = 0;
+					<?php
 
-				while($linha = mysqli_fetch_assoc($query))
-				{
-					if(isset($_GET['id'.$linha['id']]))
-					{
-						$queries[$i] = mysqli_query($conexao, "DELETE FROM monitoramento WHERE id = ".$linha['id']);
-					}
-
-					$i++;	
-				}
-
-				echo "<script>window.location = 'registro.php'</script>";
-			}
-
-			$query = mysqli_query($conexao, "SELECT * FROM monitoramento ORDER BY id");
-
-			if (isset($_GET['apagar']))
-			{
-				echo "<h3>Excluir registros</h3>";
-				echo "<form id='apagar' action='registro.php'>";
-				echo "<table>";
-				echo "<tr>".
-						"<td style='background-color:lightblue;'><b>Data</b></td>".
-						"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
-						"<td style='background-color:lightblue;'><b>Cafe</b></td>".
-						"<td style='background-color:lightblue;'><b>Almoço</b></td>".
-						"<td style='background-color:lightblue;'><b>Lanche</b></td>".
-						"<td style='background-color:lightblue;'><b>Janta</b></td>".
-						"<td style='background-color:lightblue;'><b>Exercicio</b></td>".
-						"<td style='background-color:lightblue;'><b>Agua</b></td>".
-						"<td style='background-color:lightblue;'><b>Peso</b></td>".
-						"<td style='background-color:lightblue;'><b>Selecionado</b></td>".
-					 "</tr>";
-
-				while($linha = mysqli_fetch_assoc($query))
-				{
-					echo "<tr>".
-							"<td>".$linha['data']."</td>".
-							"<td>".$linha['glicemia']."</td>".
-							"<td>".$linha['cafe']."</td>".
-							"<td>".$linha['almoco']."</td>".
-							"<td>".$linha['lanche']."</td>".
-							"<td>".$linha['janta']."</td>".
-							"<td>".$linha['exercicio']."</td>".
-							"<td>".$linha['agua']."</td>".
-							"<td>".$linha['peso']."</td>".
-							"<td><input type='checkbox' name='id".$linha['id']."'></td>".
-						 "</tr>";
-				}
-
-				echo "</table><br>";
-				echo 	"<input type='submit' value='Confirmar' name='verificar'><br><br>".
-						"<input type='button' onclick='javascript:window.history.go(-1)';' value='Voltar'>";
-				echo "</form>";
-			}
-			elseif (isset($_GET['verificar']))
-			{
-				$string = "SELECT id FROM monitoramento ORDER BY id";
-				$query = mysqli_query($conexao, $string);
-
-				echo "<form action='registro.php'>";
-
-				while($linha = mysqli_fetch_assoc($query))
-				{
-					if(isset($_GET['id'.$linha['id']]))
-					{
-						echo "<input type='hidden' name='id".$linha['id']."' value='on'>";
-					}
-				}
-
-				echo "<div class='form'> <h3>Confirmação de exclusão de dados</h3>".
-					 "<input type='submit' name='confirm' value='Confirmar'></div>";
-			}
-			elseif(isset($_GET['buscar']))
-			{
-				$valor = $_GET['valor'];
-				$string = "SELECT * FROM monitoramento WHERE data LIKE '%".$valor."%'";				
-
-				if(mysqli_query($conexao, $string))
-				{
-					$query = mysqli_query($conexao, $string);
-
-					if (mysqli_num_rows($query) > 0)
-					{
-						echo "<table>";
-						echo "<tr>".
-								"<td style='background-color:lightblue;'><b>Data</b></td>".
-								"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
-								"<td style='background-color:lightblue;'><b>Cafe</b></td>".
-								"<td style='background-color:lightblue;'><b>Almoço</b></td>".
-								"<td style='background-color:lightblue;'><b>Lanche</b></td>".
-								"<td style='background-color:lightblue;'><b>Janta</b></td>".
-								"<td style='background-color:lightblue;'><b>Exercicio</b></td>".
-								"<td style='background-color:lightblue;'><b>Agua</b></td>".
-								"<td style='background-color:lightblue;'><b>Peso</b></td>".
-							 "</tr>";
-
-						while($linha = mysqli_fetch_assoc($query))
-						{												
-							echo "<tr>".
-									"<td>".$linha['data']."</td>".
-									"<td>".$linha['glicemia']."</td>".
-									"<td>".$linha['cafe']."</td>".
-									"<td>".$linha['almoco']."</td>".
-									"<td>".$linha['lanche']."</td>".
-									"<td>".$linha['janta']."</td>".
-									"<td>".$linha['exercicio']."</td>".
-									"<td>".$linha['agua']."</td>".
-									"<td>".$linha['peso']."</td>".
-									"</tr>";
+						$sql = "SELECT * FROM monitoramento";
+						$buscar = mysqli_query($conexao, $sql);
+						while ($dados = mysqli_fetch_array($buscar)){
+							$data = $dados['data'];
+							$glicemia = $dados['glicemia'];
+							$exercicio = $dados['exercicio'];
+							$agua = $dados['agua'];
+							$peso = $dados['peso'];
+							$cafe = $dados['cafe'];
+							$almoco = $dados['almoco'];
+							$lanche = $dados['lanche'];
+							$janta = $dados['janta'];
 						}
+					?>
 
-						echo "</table><br>";
-						echo "<button class='button' onclick=\"window.location='addRegistro.php';\">Adicionar Registros</button>
-					 		  <button class='button' onclick=\"window.location='registro.php?apagar=yes';\">Excluir Registros</button>
-					  		  <button class='button' onclick=\"window.location='dashboard.php';\">Voltar</button>";
-					}
-					else
-					{
-						echo "<script>
-									alert('Nenhum valor encontrado!');
-									window.location='registros.php';
-							  </script>";
-					}
-				}
-				else
-				{
-					echo "<script>
-									alert('Falha na busca de registros!');
-									window.location='registros.php';
-						  </script>";
-				}
-			}
-			else
-			{
-				echo "<table>";
-				echo "<tr>".
-							"<td style='background-color:lightblue;'><b>Data</b></td>".
-							"<td style='background-color:lightblue;'><b>Glicemia</b></td>".
-							"<td style='background-color:lightblue;'><b>Cafe</b></td>".
-							"<td style='background-color:lightblue;'><b>Almoço</b></td>".
-							"<td style='background-color:lightblue;'><b>Lanche</b></td>".
-							"<td style='background-color:lightblue;'><b>Janta</b></td>".
-							"<td style='background-color:lightblue;'><b>Exercicio</b></td>".
-							"<td style='background-color:lightblue;'><b>Agua</b></td>".
-							"<td style='background-color:lightblue;'><b>Peso</b></td>".
-					 "</tr>";
+							<div class="busca">
+							<?php
 
-				while($linha = mysqli_fetch_assoc($query))
-				{
-					echo "<tr>".
-							"<td>".$linha['data']."</td>".
-							"<td>".$linha['glicemia']."</td>".
-							"<td>".$linha['cafe']."</td>".
-							"<td>".$linha['almoco']."</td>".
-							"<td>".$linha['lanche']."</td>".
-							"<td>".$linha['janta']."</td>".
-							"<td>".$linha['exercicio']."</td>".
-							"<td>".$linha['agua']."</td>".
-							"<td>".$linha['peso']."</td>".
-						 "</tr>";
-				}
+							echo "<form action='registro.php'>";
+							echo "<input type='text' placeholder='Insira a data que deseja buscar' name='valor' maxlenght='15' autocomplete='off' required><br><br>";
+							echo "<input type='submit' name='buscar' value='Buscar'>";
+							echo "<input type='button'  onclick=\"window.location='registro.php';\" value='Apagar filtro'>";
+							echo "</form>";
+							
+								?>
+							</div>
 
-				echo "</table><br>";
-				echo "<button class='button' onclick=\"window.location='addRegistro.php';\">Adicionar Registros</button>
-					  <button class='button' onclick=\"window.location='registro.php?apagar=yes';\">Excluir Registros</button>
-					  <button class='button' onclick=\"window.location='dashboard.php';\">Voltar</button>";
-			}
+							<div class="bloco-glicemia">
 
-			mysqli_close($conexao);
-		?>
+								<span>Nível Atual:</span>
+
+								<div class="valores">
+									<p class="glicemia"> Glicemia </p>
+
+									<div class="valor-atual">
+										<div class="valor-glicemia">
+											<?php echo $glicemia ?>
+										</div>
+										<p class="medidas">mg/dL</p>
+									</div>
+					
+								</div>
+
+								<div class="novo-registro">
+									<button class="add">novo registro</button>
+																		
+								</div>
+
+							</div>
+
+							<div class="bloco-exercicio">
+
+								<span>Exercício Físico:</span>
+
+								<div class="registro-exercicio">
+									<div class="exercicio">
+										<?php echo $exercicio ?>
+									</div>
+								</div>
+							</div>
+
+							<div class="bloco-alimentacao">
+							
+							<p>Alimentação:</p>
+
+							<div class="cafe">
+								<span>Café da manhã:</span>
+								<div class="campo-cafe">
+									<div class="registro-cafe">
+										<?php echo $cafe ?>
+									</div>
+								</div>
+
+							</div>
+
+							<div class="almoco">
+								<span>Almoço:</span>
+								<div class="campo-almoco">
+									<div class="registro-almoco">
+										<?php echo $almoco ?>
+									</div>
+								</div>	
+							</div>
+
+							<div class="lanche">
+								<span>Lanche:</span>
+								<div class="campo-lanche">
+									<div class="registro-lanche">
+										<?php echo $lanche ?>
+									</div>
+								</div>
+							</div>
+
+							<div class="janta">
+								<span>Jantar:</span>
+								<div class="campo-jantar">
+									<div class="registro-janta">
+										<?php echo $janta ?>
+									</div>
+								</div>
+							</div>
+
+							</div>
+
+							<div class="bloco-agua">
+								<div class="registro-agua">
+									<span>Água:</span>
+									<div class="agua">
+										<span><?php echo $agua ?></span>
+									</div>
+									<p class="medidas">mL</p>
+								</div>
+
+								<div class="registro-peso">
+									<span>Peso:</span>
+									<div class="peso">
+										<span><?php echo $peso ?></span>
+									</div>
+									<p class="medidas">kg</p>
+
+								</div>
+							</div>
+
+
+							<?php 
+										mysqli_close($conexao);
+
+							?>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="rodape">
+			<div class="icones">
+				<img src="img/facebook-branco.png" width="27px">
+				<img src="img/instagram-branco.png" width="27px">
+				<img src="img/linkedin-branco.png" width="27px">
+			</div>
+
+			<p class="direitos">@copyright todos os direitor reservados</p>
+			<p>designed by TECHUMAN</p>
+		</div>
   </body>
 </html>

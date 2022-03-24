@@ -72,7 +72,6 @@
 					
 					<div class="cabecalho-container">
 						<h1 class="titulo-page">Dashboard</h1>
-						<p class="descricao-dash">Nessa área você poderá acompanhar todos os registros de glicemia já registrados de uma maneira mais fácil de visualizar. </p>
 					</div>
 
 					<div class="container-glicemia">

@@ -1,0 +1,828 @@
+
+/* INÍCIO ESTILIZAÇÕES GERAIS */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    background: url(img/BG.png) no-repeat center center fixed;
+}
+
+/* estilo de testes para destacar divs */
+/* div{
+    border: 2px solid red;
+} */
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* FIM ESTILIZAÇÕES GERAIS */
+
+
+/* INÍCIO CABEÇALHO E RODAPÉ */
+
+.logo{
+    position: absolute;
+    top: 29px;
+    left: 844px;
+}
+
+.rodape{
+    position: absolute;
+    width: 376px;
+    height: 84px;
+    left: 772px;
+    top: 993px;
+}
+
+.rodape p{
+    color: #fff;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.icones{
+    width: 113.19px;
+    position: relative;
+    left: 131px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FIM CABEÇALHO E RODAPÉ */
+
+
+/* INÍCIO CONTAINER PRINCIPAL */
+
+.container{
+    position: absolute;
+    width: 1274px;
+    height: 800px;
+    left: 323px;
+    top: 161px;
+    filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    backdrop-filter: blur(100px);
+    border: 5px solid;
+    border-radius: 30px;
+    border-color: #ffffff94;
+    border-style: solid;
+}
+
+/* FIM CONTAINER PRINCIPAL */
+
+
+/* INICIO MENU (NAVBAR) */
+
+.navbar{
+    position: absolute;
+    width: 304px;
+    height: 795px;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.329) 0%, rgba(255, 255, 255, 0.041) 100%);
+    backdrop-filter: blur(100px);
+    border-radius: 25px 0 0 25px;
+}
+
+.navbar-inner{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.profile-picture{
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: 50px;
+    background: #7CC9F2;
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+}
+
+.navbar-user-dados{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+}
+
+.navbar-name{
+    position: absolute;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0871BD;
+}
+
+.navbar-username{
+    position: absolute;
+    top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0095ff;
+}
+
+.navbar-list{
+    position: absolute;
+    top: 300px;
+    width: 304px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-item{
+    position: relative;
+    width: 304px;
+    height: 60px;
+    left: -42px;
+    padding: 10px 10% 5% 40%;
+    border: 2px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bolder;
+    
+}
+
+#menu-item1,#menu-item2,#menu-item3,#menu-item4{
+    color: white;
+}
+
+#menu-item1:hover,#menu-item2:hover,#menu-item3:hover,#menu-item4:hover{
+    background-color: rgba(240, 244, 247, 0.521);
+    color: #0871BD;
+}
+
+#menu-item1{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Home.png) no-repeat 22%;
+}
+
+#menu-item2{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Perfil.png) no-repeat 22%;
+}
+
+#menu-item3{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-MinhaSaude.png) no-repeat 22%;
+}
+
+#menu-item4{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Mural.png) no-repeat 22%;
+}
+
+.navbar-sair{
+    position: absolute;
+    top: 700px;
+    width: 304px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    left: 43%;
+    color: #0871BD;
+}
+
+.button-sign-out{
+    color: #0871BD;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* FIM MENU (NAVBAR) */
+
+
+/* INICIO TELA CONTEÚDOS */
+
+.container-tela{
+    position: absolute;
+    left: 304px;
+    padding: 20px;
+    width: 900px;
+}
+
+.titulo{
+    position: absolute;
+    width: 193px;
+    height: 40px;
+    left: 70px;
+    top: 40px;
+
+    color: #fff;
+    font-family: Roboto;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+
+.bloco-glicemia{
+    position: absolute;
+    width: 403px;
+    height: 296px;
+    left: 70px;
+    top: 110px;
+    background: rgba(240, 244, 247, 0.2);
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+    border-radius: 30px;
+}
+
+.bloco-glicemia span{
+    position: absolute;
+    left: 43px;
+    top: 38px;
+    font-family: 'Roboto';
+    color: #fff;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.valores{
+    position: absolute;
+    width: 179px;
+    height: 213.36px;
+    left: 187px;
+    top: 41px;
+
+    background-color: rgba(8, 113, 189, 0.5);
+    border-radius: 30px;
+}
+
+.valores p{
+    position: absolute;
+    width: 123.83px;
+    height: 51.06px;
+    left: 26.97px;
+    top: 23.71px;
+
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    text-align: center;
+
+    color: #FFFFFF;
+
+}
+
+.valor-atual{
+    position: absolute;
+    width: 159.38px;
+    height: 91.18px;
+    left: 9.81px;
+    top: 84.83px;
+
+    background: rgba(240, 244, 247, 0.5);
+    border-radius: 30px;
+}
+
+.valor-atual p{
+    position: absolute;
+    width: 58.85px;
+    height: 29.18px;
+    left: 87.05px;
+    top: 31px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #035891;
+}
+
+.valor-glicemia{
+    position: absolute;
+    width: 55.17px;
+    height: 51.06px;
+    left: 28.07px;
+    top: 20.06px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+
+.bloco-valor .medidas{
+    position: absolute;
+    width: 58.85px;
+    height: 29.18px;
+    left: 87.05px;
+    top: 125.83px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #035891;
+}
+.novo-registro .add{
+    position: absolute;
+    width: 129px;
+    height: 43.07px;
+    left: 37px;
+    top: 211px; 
+    background: #0084DC;
+    border-radius: 30px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: #fff;
+    border: none;
+}
+
+
+.bloco-exercicio{
+    position: absolute;
+    width: 406px;
+    height: 137px;
+    left: 499px;
+    top: 110px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.bloco-exercicio span{
+    position: absolute;
+    width: 127px;
+    height: 21px;
+    left: 140px;
+    top: 17px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+.registro-exercicio{
+    position: absolute;
+    width: 348px;
+    height: 63px;
+    left: 29px;
+    top: 56px;
+
+    background: rgba(124, 201, 242, 0.5);
+    border-radius: 30px;
+}
+
+.exercicio{ 
+    position: absolute;
+    width: 282.43px;
+    height: 49px;
+    left: 32.78px;
+    top: 7px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+
+.bloco-agua{
+    position: absolute;
+    width: 406px;
+    height: 137px;
+    left: 499px;
+    top: 269px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.registro-agua span{
+    position: absolute;
+    width: 46px;
+    height: 21px;
+    left: 92px;
+    top: 15px;
+        
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+        
+    color: #0084DC;
+}
+
+.agua{
+    position: absolute;
+    width: 113px;
+    height: 68px;
+    left: 58px;
+    top: 51px;
+
+    background: rgba(240, 244, 247, 0.5);
+    border-radius: 30px;
+}
+
+
+.registro-peso span{
+    position: absolute;
+    width: 46px;
+    height: 21px;
+    left: 268px;
+    top: 15px;
+        
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+        
+    color: #0084DC;
+}
+
+.registro-agua p{
+    position: absolute;
+    width: 34px;
+    height: 22px;
+    left: 123.93px;
+    top: 74px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #035891;
+}
+
+.agua span{
+    position: absolute;
+    width: 55.17px;
+    height: 38.29px;
+    left: 15px;
+    top: 15.04px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+
+.peso{
+    position: absolute;
+    width: 113px;
+    height: 68px;
+    left: 234px;
+    top: 51px;
+
+    background: rgba(240, 244, 247, 0.5);
+    border-radius: 30px;
+}
+
+.peso span{
+    position: absolute;
+    width: 55.17px;
+    height: 38.29px;
+    left: 25px;
+    top: 15.04px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+
+.registro-peso p{
+    position: absolute;
+    width: 34px;
+    height: 22px;
+    left: 299.93px;
+    top: 74px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #035891;
+}
+
+.bloco-alimentacao{
+    position: absolute;
+    width: 835px;
+    height: 271px;
+    left: 70px;
+    top: 428px;
+    border: 1px solid red;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.bloco-alimentacao p{
+    position: absolute;
+    width: 273.5px;
+    height: 25.13px;
+    left: 281.79px;
+    top: 13.46px;
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+
+.bloco-alimentacao span{
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #fff;
+}
+
+.cafe span{
+    position: absolute;
+    width: 194.76px;
+    height: 14.36px;
+    left: 39.37px;
+    top: 65px;
+}
+
+.campo-cafe{
+    position: absolute;
+    width: 643.63px;
+    height: 45.76px;
+    left: 152px;
+    top: 49px;
+    
+    background: rgba(124, 201, 242, 0.5);
+    border-radius: 30px;
+}
+
+.registro-cafe{
+    position: absolute;
+    width: 522.37px;
+    height: 35.59px;
+    left: 60.63px;
+    top: 5.08px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+
+.almoco span{
+    position: absolute;
+    width: 194.76px;
+    height: 14.36px;
+    left: 39.37px;
+    top: 117px;
+}
+
+.campo-almoco{    
+    position: absolute;
+    width: 643.63px;
+    height: 45.76px;
+    left: 152px;
+    top: 101px;
+    
+    background: rgba(124, 201, 242, 0.5);
+    border-radius: 30px;
+    
+}
+
+.registro-almoco{
+    position: absolute;
+    width: 522.37px;
+    height: 35.59px;
+    left: 60.63px;
+    top: 5.08px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+
+.lanche span{
+    position: absolute;
+    width: 194.76px;
+    height: 14.36px;
+    left: 39.37px;
+    top: 169px;
+}
+
+.campo-lanche{
+    position: absolute;
+    width: 643.63px;
+    height: 45.76px;
+    left: 152px;
+    top: 153px;
+    
+    background: rgba(124, 201, 242, 0.5);
+    border-radius: 30px;
+}
+
+.registro-lanche{
+    position: absolute;
+    width: 522.37px;
+    height: 35.59px;
+    left: 60.63px;
+    top: 5.08px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+
+.janta span{
+    position: absolute;
+    width: 194.76px;
+    height: 14.36px;
+    left: 39.37px;
+    top: 221px;
+}
+
+.campo-jantar{
+    position: absolute;
+    width: 643.63px;
+    height: 45.76px;
+    left: 152px;
+    top:205px;
+    
+    background: rgba(124, 201, 242, 0.5);
+    border-radius: 30px;
+}
+
+.registro-janta{
+    position: absolute;
+    width: 522.37px;
+    height: 35.59px;
+    left: 60.63px;
+    top: 5.08px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #0084DC;
+}
+/* FIM TELA CONTEÚDOS */
