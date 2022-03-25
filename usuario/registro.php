@@ -56,7 +56,7 @@
 						<div class="navbar-list">
 							<ul>
 								<a href="dashboard.php"><li class="list-item" id="menu-item1">DASHBOARD</li></a>
-								<a href="dashboard.php"><li class="list-item" id="menu-item2">PERFIL</li></a>
+								<a href="perfil.php"><li class="list-item" id="menu-item2">PERFIL</li></a>
 								<a href="registro.php"><li class="list-item" id="menu-item3">MINHA SAÚDE</li></a>
 								<a href="registro.php"><li class="list-item" id="menu-item4">MURAL</li></a>
 							</ul>
@@ -97,8 +97,8 @@
 							echo "<input type='submit' name='buscar' value='Buscar'>";
 							echo "<input type='button'  onclick=\"window.location='registro.php';\" value='Apagar filtro'>";
 							echo "</form>";
-							
-								?>
+
+							?>
 							</div>
 
 							<div class="bloco-glicemia">

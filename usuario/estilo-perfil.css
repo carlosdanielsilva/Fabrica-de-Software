@@ -1,0 +1,381 @@
+
+/* INÍCIO ESTILIZAÇÕES GERAIS */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    background: url(img/BG.png) no-repeat center center fixed;
+}
+
+/* estilo de testes para destacar divs */
+/* div{
+    border: 2px solid red;
+} */
+
+ul{
+    list-style: none;
+}
+
+li{
+    display: inline;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* FIM ESTILIZAÇÕES GERAIS */
+
+
+/* INÍCIO CABEÇALHO E RODAPÉ */
+
+.logo{
+    position: absolute;
+    top: 29px;
+    left: 844px;
+}
+
+.rodape{
+    position: absolute;
+    width: 376px;
+    height: 84px;
+    left: 772px;
+    top: 993px;
+}
+
+.rodape p{
+    color: #fff;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: -0.02em;
+}
+
+.icones{
+    width: 113.19px;
+    position: relative;
+    left: 131px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FIM CABEÇALHO E RODAPÉ */
+
+
+/* INÍCIO CONTAINER PRINCIPAL */
+
+.container{
+    position: absolute;
+    width: 1274px;
+    height: 800px;
+    left: 323px;
+    top: 161px;
+    filter: drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.1));
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0.12) 100%);
+    backdrop-filter: blur(100px);
+    border: 5px solid;
+    border-radius: 30px;
+    border-color: #ffffff94;
+    border-style: solid;
+}
+
+/* FIM CONTAINER PRINCIPAL */
+
+
+/* INICIO MENU (NAVBAR) */
+
+.navbar{
+    position: absolute;
+    width: 304px;
+    height: 795px;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(248.48deg, rgba(255, 255, 255, 0.329) 0%, rgba(255, 255, 255, 0.041) 100%);
+    backdrop-filter: blur(100px);
+    border-radius: 25px 0 0 25px;
+}
+
+.navbar-inner{
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.profile-picture{
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    top: 50px;
+    background: #7CC9F2;
+    border: 3px solid #FFFFFF;
+    border-radius: 100%;
+}
+
+.navbar-user-dados{
+    position: absolute;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    top: 200px;
+}
+
+.navbar-name{
+    position: absolute;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0871BD;
+}
+
+.navbar-username{
+    position: absolute;
+    top: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #0095ff;
+}
+
+.navbar-list{
+    position: absolute;
+    top: 300px;
+    width: 304px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.list-item{
+    position: relative;
+    width: 304px;
+    height: 60px;
+    left: -42px;
+    padding: 10px 10% 5% 40%;
+    border: 2px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bolder;
+    
+}
+
+#menu-item1,#menu-item2,#menu-item3,#menu-item4{
+    color: white;
+}
+
+#menu-item1:hover,#menu-item2:hover,#menu-item3:hover,#menu-item4:hover{
+    background-color: rgba(240, 244, 247, 0.521);
+    color: #0871BD;
+}
+
+#menu-item1{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Home.png) no-repeat 22%;
+}
+
+#menu-item2{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Perfil.png) no-repeat 22%;
+}
+
+#menu-item3{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-MinhaSaude.png) no-repeat 22%;
+}
+
+#menu-item4{
+    background: rgba(240, 244, 247, 0.11) url(img/Nav-Mural.png) no-repeat 22%;
+}
+
+.navbar-sair{
+    position: absolute;
+    top: 700px;
+    width: 304px;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    left: 43%;
+    color: #0871BD;
+}
+
+.button-sign-out{
+    color: #0871BD;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* FIM MENU (NAVBAR) */
+
+
+/* INICIO TELA CONTEÚDOS */
+
+.perfil span{
+    position: absolute;
+    width: 61px;
+    height: 28px;
+    left: 477px;
+    top: 69px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+}
+
+.secao-usuario{
+    position: absolute;
+    width: 502px;
+    height: 153px;
+    left: 477px;
+    top: 115px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.foto-perfil{
+    position: absolute;
+    width: 225px;
+    height: 226px;
+    left: 389px;
+    top: -47px;
+    background: #7CC9F2;
+    border: 3px solid #FFFFFF;
+    border-radius: 120px;
+}
+
+.secao-email{
+    position: absolute;
+    width: 614px;
+    height: 57px;
+    left: 0;
+    top: 218px;
+
+    background: rgba(240, 244, 247, 0.2);
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+    border-radius: 30px;
+}
+
+.secao-dn{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 0px;
+    top: 336px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.secao-genero{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 332px;
+    top: 336px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.secao-diabetes{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 0px;
+    top: 458px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.secao-telefone{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 332px;
+    top: 458px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.secao-data{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 0px;
+    top: 578px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+.secao-tipo{
+    position: absolute;
+    width: 281.94px;
+    height: 57px;
+    left: 332px;
+    top: 578px;
+
+    background: rgba(240, 244, 247, 0.2);
+
+    border: 3px solid rgba(240, 244, 247, 0.5);
+    box-sizing: border-box;
+    backdrop-filter: blur(100px);
+
+    border-radius: 30px;
+}
+
+
+/* FIM TELA CONTEÚDOS */
