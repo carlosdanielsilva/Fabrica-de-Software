@@ -58,7 +58,7 @@
 								<a href="dashboard.php"><li class="list-item" id="menu-item1">DASHBOARD</li></a>
 								<a href="perfil.php"><li class="list-item" id="menu-item2">PERFIL</li></a>
 								<a href="registro.php"><li class="list-item" id="menu-item3">MINHA SAÚDE</li></a>
-								<a href="registro.php"><li class="list-item" id="menu-item4">MURAL</li></a>
+								<a href="mural.php"><li class="list-item" id="menu-item4">MURAL</li></a>
 							</ul>
 						</div>
 						<div class="navbar-sair">

@@ -28,12 +28,12 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="estilo-perfil.css">
+	<link rel="stylesheet" type="text/css" href="mural.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;700&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<title>Perfil</title>
+	<title>Mural</title>
 
 </head>
 <body>
@@ -69,43 +69,53 @@
 
 				<div class="container-tela">
 
-                    <div class="perfil">
-                        <span>editar</span> <!--transformar para um botão de editar-->
-                        <div class="secao-usuario">
+				<span>Mural</span>
 
-                        <div>
+				<div class="carrossel">
 
-                        <div class="foto-perfil">
-                        </div>
-                    </div>
+				</div>
 
-                    <div class="secao-email">
+				<div class="postagens">
+					<div class="post1">
+						<div class="imagem">
+						</div>
 
-                    </div>
+						<div class="titulo">
+						</div>
 
-                    <div class="secao-dn">
+						<div class="descricao">
+						</div>
 
-                    </div>
+					</div>
 
-                    <div class="secao-genero">
+					<div class="post2">
+						<div class="imagem">
+						</div>
 
-                    </div>
+						<div class="titulo">
+						</div>
 
-                    <div class="secao-diabetes">
+						<div class="descricao">
+						</div>
 
-                    </div>
+					</div>
 
-                    <div class="secao-telefone">
+					<div class="post3">
+						<div class="imagem">
+						</div>
+						<div class="titulo">
+						</div>
 
-                    </div>
+						<div class="descricao">
+						</div>
 
-                    <div class="secao-data">
+					</div>
 
-                    </div>
 
-                    <div class="secao-tipo">
+				</div>
 
-                    </div>
+    
+
     
                 </div>	
 
